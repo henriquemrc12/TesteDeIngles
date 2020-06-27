@@ -1,29 +1,32 @@
 <div class="container">
   <div class="jumbotron">
     <div class="row">
+
       <div class="col-sm-6">
-        <app-progresso></app-progresso>
+        <app-progresso [progresso]="progresso"></app-progresso>
       </div>
+
       <div class="col-sm-6">
         <div class="col d-flex flex-row-reverse bd-highlight">
           <app-tentativas></app-tentativas>
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col">
-        <h6>Traduza a frase:</h6>
-        <p><b>How are you?</b></p>
+        <h6> {{ instrucao }} </h6>
+        <p><b> {{ rodadaFrase.fraseEng }} </b></p>
 
         <div class="form-group">
-          <textarea class="form-control" rows="3"></textarea>
+          <textarea class="form-control" rows="3" (input)="atualizarResposta($event)" [value]="resposta" ></textarea>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col d-flex flex-row-reverse bd-highlight">
-        <button type="button" class="btn btn-primary">Verificar</button>
+        <button type="button" class="btn btn-primary" (click)="verificarResposta()" >Verificar</button>
       </div>
     </div>
   </div>

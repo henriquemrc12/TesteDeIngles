@@ -132,5 +132,8 @@
       }
     }
   },
-  "defaultProject": "AppTeste"
+  "defaultProject": "AppTeste",
+  "cli": {
+    "analytics": "1b65009d-8223-4524-9668-7ed8a6c77401"
+  }
 }
